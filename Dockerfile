@@ -17,6 +17,7 @@ RUN sed -e '/bullseye-updates/ s/^#*/#/' -i /etc/apt/sources.list && \
       build-essential nodejs libpq-dev git-core imagemagick \
       default-libmysqlclient-dev default-mysql-client netcat shared-mime-info \
       libqt5webkit5 libqt5webkit5-dev xvfb \
+      libvips-dev libvips-tools \
       cmake pkg-config file \
       sudo postgresql-client-13 curl vim-tiny && \
     apt-get clean && \

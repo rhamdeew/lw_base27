@@ -19,10 +19,16 @@ RUN sed -e '/bullseye-updates/ s/^#*/#/' -i /etc/apt/sources.list && \
       libqt5webkit5 libqt5webkit5-dev xvfb \
       libvips-dev libvips-tools \
       cmake pkg-config file \
-      sudo postgresql-client-13 curl vim-tiny && \
+      postgresql-client-13 curl vim-tiny && \
+    corepack enable && \
+    corepack prepare yarn@stable --activate && \
+    apt-get autoremove -y && \
+    apt-get autoclean && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    corepack enable
+    rm -rf /var/cache/apt/* && \
+    rm -rf /usr/share/man/* && \
+    rm -rf /usr/share/doc/*
 
 RUN echo "alias m='make'\n\
   alias ms='make start'\n\

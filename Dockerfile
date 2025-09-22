@@ -1,4 +1,4 @@
-FROM ruby:2.6-slim-bullseye
+FROM ruby:2.7-slim-bullseye
 
 ENV DEBIAN_FRONTEND=noninteractive \
     DEBCONF_NOWARNINGS="yes" \

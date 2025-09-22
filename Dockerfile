@@ -11,9 +11,11 @@ ARG INSTALL_DEVELOPMENT_DEPENDENCIES=false
 RUN sed -e '/bullseye-updates/ s/^#*/#/' -i /etc/apt/sources.list && \
     apt-get clean && \
     apt-get update && \
-    apt-get install -qq -y wget && \
-    wget -qO- https://deb.nodesource.com/setup_20.x | bash - && \
-    apt-get install -qq -y --no-install-recommends \
+    apt-get install -qq -y wget
+
+RUN wget -qO- https://deb.nodesource.com/setup_20.x | bash -
+
+RUN apt-get install -qq -y --no-install-recommends \
       build-essential nodejs libpq-dev git-core imagemagick \
       default-libmysqlclient-dev default-mysql-client netcat shared-mime-info \
       libqt5webkit5 libqt5webkit5-dev xvfb \

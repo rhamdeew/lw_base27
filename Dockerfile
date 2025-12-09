@@ -49,3 +49,5 @@ alias crst='bin/rails credentials:show --environment test'\n\
 alias sw='bundle exec rake rswag:specs:swaggerize'\n\
 export EDITOR=vi\n\
 export PATH=\"/app/bin:/bundle_cache/bin:\$PATH\"" >> ~/.bashrc
+
+RUN gem update --system 3.3.22 > /dev/null && gem install bundler -v 2.4.22 --silent
